@@ -1,6 +1,7 @@
 name: "moondream-demo"
+namespace: "seanshahkarami"
 description: "Run image stream through Moondream model and print results."
-version : "0.1.2"
+version : "0.1.4"
 source:
   url: "https://github.com/seanshahkarami/moondream-demo"
   branch: "main"

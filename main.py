@@ -10,20 +10,27 @@ models = [
 
 
 def main(model, camera, query):
+    print(f"Running with model={model!r} camera={camera!r} query={query!r}", flush=True)
+
+    print("Loading model...", flush=True)
     model = md.vl(model=model)
 
     camera = Camera(camera)
 
     while True:
+        print("Taking snapshot from camera...", flush=True)
         image = camera.snapshot()
         image.save("snapshot.jpg")
         image = Image.open("snapshot.jpg")
+
+        print("Encoding image...", flush=True)
         encoded_image = model.encode_image(image)
 
+        print("Querying model...", flush=True)
         answer = model.query(encoded_image, query)["answer"]
+
         print("Query:", query, flush=True)
         print("Answer:", answer, flush=True)
-        print()
 
 
 if __name__ == "__main__":
