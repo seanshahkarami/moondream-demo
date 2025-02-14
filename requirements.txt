@@ -1,0 +1,2 @@
+moondream==0.0.6
+pywaggle[vision]==0.56.0

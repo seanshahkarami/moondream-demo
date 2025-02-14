@@ -1,0 +1,16 @@
+name: "moondream-demo"
+description: "Run image stream through Moondream model and print results."
+version : "0.1.0"
+source:
+  url: "https://github.com/seanshahkarami/moondream-demo"
+  branch: "main"
+  architectures :
+    - "linux/amd64"
+    - "linux/arm64"
+inputs:
+  - id: "--camera"
+    type: "string"
+  - id: "--model"
+    type: "string"
+  - id: "query"
+    type: "string"
